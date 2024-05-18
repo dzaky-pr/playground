@@ -1,4 +1,8 @@
-import Image from 'next/image';
+import { Flex, Text } from '@radix-ui/themes';
+
+import Button from '@/components/buttons/Button';
+
+console.log('Halo dunia');
 
 export default function Home() {
   return (
