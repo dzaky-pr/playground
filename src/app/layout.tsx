@@ -1,19 +1,14 @@
-import './globals.css';
+'use client';
 
-import type { Metadata } from 'next';
+import './globals.css';
+import '@radix-ui/themes/styles.css';
+
+import { Theme } from '@radix-ui/themes';
 import { Inter } from 'next/font/google';
 
 import Providers from '@/app/providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-
-export const metadata: Metadata = {
-  title: {
-    default: 'Nextjs Starter Template',
-    template: '%s | Nextjs Starter Template',
-  },
-  description: 'Nextjs 14.2.1 + Tailwind CSS starter template',
-};
 
 export default function RootLayout({
   children,
@@ -23,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Theme>
+          <Providers>{children}</Providers>
+        </Theme>
       </body>
     </html>
   );
